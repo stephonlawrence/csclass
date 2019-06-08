@@ -57,7 +57,51 @@
       <li><h4><a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/variables.html">Kinds of Veriables</a></h4></li>
       <li><h4><a href="https://www.w3schools.com/java/java_user_input.asp">Get Input from User</a></h4></li>
       <li><h4><a href="https://www.tutorialspoint.com/java/util/java_util_random.htm">Generating Random Numbers</a></h4></li>
-      <li><h4>In class project. guess the number between 1 and 3</h4></li>
+      <li>
+        <h4>In class project. guess the number between 1 and 3</h4>
+        <h5>Code from class</h5>
+        <p><pre><code>
+import java.util.Scanner;
+import java.util.Random;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+    
+
+    Random generator = new Random();
+    int user = -1;
+    while(user != 0) {
+      System.out.println("Guess a number between 1 and 3 or enter 0 to exit the game");
+      // generates random number between 1 and 3
+      int answer = generator.nextInt(3) + 1;
+      
+      user = myObj.nextInt();  // Read user input
+      // out of bounds
+      // user wins when user == answer
+      // user loses when user != answer
+      // || -> or
+      // && -> and
+      if (user == 0) {
+        break;
+      }
+      if (user > 3 || user < 1) {
+        System.out.println(user + " is out of bounds");
+      } else if (user == answer) {
+        System.out.println("You win!");
+      } else {
+        System.out.println("You lose! sucker, the answer was " + answer);
+      }
+    }
+    System.out.println("Game Ended");
+  }
+}
+        </code></pre></p>
+      </li>
+      
+    </ul>
+    <h1 id="assignment3" class="display-3">Assignment 3</h1>
+    <ul>
       <li><h4><a href="https://programming.guide/java/primitives-vs-objects-references.html">primitives vs references</a></h4></li>
     </ul>
   </div>
